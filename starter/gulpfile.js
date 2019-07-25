@@ -45,6 +45,8 @@ gulp.task("browser-sync", ["styles"], function() {
       target: "localhost:5000", // can be [virtual host, sub-directory, localhost with port]
       ws: true // enables websockets
     },
+    notify: false,
+    open: false,
     serveStatic: [".", "./public"]
   });
 
