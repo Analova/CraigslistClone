@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import Header from "./includes/Header";
 
 export default class App extends Component {
   constructor() {
@@ -8,6 +8,10 @@ export default class App extends Component {
   }
 
   render() {
-    return <div>THIS IS THE APP PAGE</div>;
+    return (
+      <div id="">
+        <Header />
+      </div>
+    );
   }
 }
