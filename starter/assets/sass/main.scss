@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 @import "reset";
+@import "home";
 
 * {
   box-sizing: border-box;
@@ -65,4 +66,9 @@ header {
       color: white;
     }
   }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }

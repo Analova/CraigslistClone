@@ -129,41 +129,45 @@ var Header = function (_Component) {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
-        "header",
-        null,
+        "div",
+        { className: "container" },
         _react2.default.createElement(
-          "div",
-          { className: "left-menu" },
+          "header",
+          null,
           _react2.default.createElement(
             "div",
-            { className: "logo" },
-            "CraigsList"
+            { className: "left-menu" },
+            _react2.default.createElement(
+              "div",
+              { className: "logo" },
+              "CraigsList"
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "city" },
+              "San Fransisco ",
+              _react2.default.createElement("i", { className: "fas fa-angle-down" })
+            )
           ),
           _react2.default.createElement(
             "div",
-            { className: "city" },
-            "San Fransisco ",
-            _react2.default.createElement("i", { className: "fas fa-angle-down" })
-          )
-        ),
-        _react2.default.createElement(
-          "div",
-          { className: "right-menu" },
-          _react2.default.createElement(
-            "div",
-            { className: "user-img" },
-            "img"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "dropdown" },
-            "My Acount",
-            _react2.default.createElement("i", { className: "fas fa-angle-down" })
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "post-btn" },
-            "post to classify"
+            { className: "right-menu" },
+            _react2.default.createElement(
+              "div",
+              { className: "user-img" },
+              "img"
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "dropdown" },
+              "My Acount",
+              _react2.default.createElement("i", { className: "fas fa-angle-down" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "post-btn" },
+              "post to classify"
+            )
           )
         )
       );
@@ -210,7 +214,7 @@ var Home = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this));
 
     _this.loopCategories = function () {
-      var testArray = [1, 2, 3, 4, 5, 6, 7];
+      var testArray = [1, 1, 1, 1, 1, 1, 1];
       return testArray.map(function (item, i) {
         return _react2.default.createElement(
           "div",
@@ -218,7 +222,7 @@ var Home = function (_Component) {
           _react2.default.createElement(
             "div",
             { className: "title" },
-            "Cominity"
+            "Comunity"
           ),
           _react2.default.createElement(
             "div",
@@ -261,22 +265,17 @@ var Home = function (_Component) {
             _react2.default.createElement(
               "a",
               { href: "#", className: "link" },
-              "Lost and Found"
-            ),
-            _react2.default.createElement(
-              "a",
-              { href: "#", className: "link" },
-              "Musician"
-            ),
-            _react2.default.createElement(
-              "a",
-              { href: "#", className: "link" },
               "Events"
             ),
             _react2.default.createElement(
               "a",
               { href: "#", className: "link" },
               "Pets"
+            ),
+            _react2.default.createElement(
+              "a",
+              { href: "#", className: "link" },
+              "Activities"
             )
           )
         );
@@ -285,10 +284,10 @@ var Home = function (_Component) {
 
     _this.loopTage = function () {
       var testTags = [1, 2, 3, 4, 5, 6, 7, 8];
-      return testTags.map(function (item) {
+      return testTags.map(function (item, i) {
         return _react2.default.createElement(
           "div",
-          { key: item, className: "tag" },
+          { key: i, className: "tag" },
           "Apple macnook"
         );
       });
@@ -303,33 +302,37 @@ var Home = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        null,
+        { className: "home" },
         _react2.default.createElement(
-          "h1",
-          null,
-          "Connecting People ",
-          _react2.default.createElement("br", null),
-          "Everywhere"
-        ),
-        _react2.default.createElement(
-          "section",
-          { className: "links" },
-          this.loopCategories()
-        ),
-        _react2.default.createElement(
-          "section",
-          { className: "trending" },
-          _react2.default.createElement("input", { type: "text", name: "search", className: "search" }),
+          "div",
+          { className: "container" },
           _react2.default.createElement(
-            "div",
-            { className: "titel" },
-            _react2.default.createElement("i", { className: "far fa-clock" }),
-            "Trending now"
+            "h1",
+            null,
+            "Connecting People ",
+            _react2.default.createElement("br", null),
+            "Everywhere :)"
           ),
           _react2.default.createElement(
-            "div",
-            { className: "tranding-tags" },
-            this.loopTage()
+            "section",
+            { className: "links" },
+            this.loopCategories()
+          ),
+          _react2.default.createElement(
+            "section",
+            { className: "trending" },
+            _react2.default.createElement("input", { type: "text", name: "search", className: "search" }),
+            _react2.default.createElement(
+              "div",
+              { className: "title" },
+              _react2.default.createElement("i", { className: "far fa-clock" }),
+              "Trending now"
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "tranding-tags" },
+              this.loopTage()
+            )
           )
         )
       );

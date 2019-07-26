@@ -7,11 +7,11 @@ export default class Home extends Component {
   }
 
   loopCategories = () => {
-    let testArray = [1, 2, 3, 4, 5, 6, 7];
+    let testArray = [1, 1, 1, 1, 1, 1, 1];
     return testArray.map((item, i) => {
       return (
         <div key={i} className="categories">
-          <div className="title">Cominity</div>
+          <div className="title">Comunity</div>
           <div className="group-links">
             <a href="#" className="link">
               Comunity
@@ -35,16 +35,13 @@ export default class Home extends Component {
               Child Care
             </a>
             <a href="#" className="link">
-              Lost and Found
-            </a>
-            <a href="#" className="link">
-              Musician
-            </a>
-            <a href="#" className="link">
               Events
             </a>
             <a href="#" className="link">
               Pets
+            </a>
+            <a href="#" className="link">
+              Activities
             </a>
           </div>
         </div>
@@ -65,20 +62,22 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div>
-        <h1>
-          Connecting People <br />
-          Everywhere
-        </h1>
-        <section className={"links"}>{this.loopCategories()}</section>
-        <section className="trending">
-          <input type="text" name="search" className="search" />
-          <div className="titel">
-            <i className="far fa-clock" />
-            Trending now
-          </div>
-          <div className="tranding-tags">{this.loopTage()}</div>
-        </section>
+      <div className="home">
+        <div className="container">
+          <h1>
+            Connecting People <br />
+            Everywhere :)
+          </h1>
+          <section className={"links"}>{this.loopCategories()}</section>
+          <section className="trending">
+            <input type="text" name="search" className="search" />
+            <div className="title">
+              <i className="far fa-clock" />
+              Trending now
+            </div>
+            <div className="tranding-tags">{this.loopTage()}</div>
+          </section>
+        </div>
       </div>
     );
   }
