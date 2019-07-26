@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class Listings extends Component {
+export default class Category extends Component {
   constructor() {
     super();
     this.state = {};
@@ -11,9 +11,7 @@ export default class Listings extends Component {
     return (
       <div className="listings">
         <div className="container">
-          city:{match.params.city}
-          category:{match.params.category}
-          listings:{match.params.listings}
+          This category is {match.params.category}
         </div>
       </div>
     );
