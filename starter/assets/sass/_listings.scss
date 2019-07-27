@@ -61,6 +61,12 @@
 
     .list-view {
         background: #F7F8FA;
+        padding: 20px;
+
+        .white-box {
+            background: white;
+            padding: 20px;
+        }
 
         .change-view {
             display: flex;
@@ -88,6 +94,55 @@
                 font-size: 1.2rem;
                 border: 2px solid #ADBED2;
                 margin-right: 20px;
+            }
+        }
+
+        .all-items {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+
+            .item {
+                border: 1px solid black;
+                border-radius: 5px;
+                overflow: hidden;
+
+                .image {
+                    background:
+                        url("https://www.chelseamotorcycles.co.uk/wp-content/uploads/2018/03/2018-Zero-SR-motorbike-side-view-white.jpg") no-repeat center;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    background-size: cover;
+                    height: 250px;
+                    position: relative;
+                    padding: 10px;
+
+                    .price {
+                        background: rgb(179, 211, 131);
+                        position: absolute;
+                        padding: 5px 10px;
+                        border-radius: 3px;
+                    }
+
+                }
+
+                .details {
+                    padding: 10px;
+
+                    h5 {
+                        font-size: 0.9rem;
+                        color: black;
+                        line-height: 1.5;
+                        margin-bottom: 5px;
+                    }
+
+                    h6 {
+                        font-size: 0.7rem;
+                        color: grey
+                    }
+                }
             }
         }
 
