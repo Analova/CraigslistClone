@@ -1,0 +1,95 @@
+.listings {
+
+    background: rgb(255, 255, 255);
+
+    .filter {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding: 50px 0;
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+
+
+            label {
+                font-weight: 500;
+                margin-bottom: 1rem;
+                font-size: 0.8rem;
+            }
+
+            select {
+                background: white;
+                border-radius: 5px;
+                padding: 20px;
+                color: #1b1b1b;
+                min-width: 100px;
+                font-size: 1.2rem;
+                border: 2px solid #ADBED2;
+                margin-right: 20px;
+            }
+
+            &.button {
+                flex-direction: row;
+                align-items: flex-end;
+            }
+
+            .primary-btn {
+                padding: 10px 20px;
+                background: #2A7DDD;
+                color: white;
+            }
+
+            .reset-btn {
+                background: #F7F8FA;
+
+
+            }
+
+            .primary-btn,
+            .reset-btn {
+                border-radius: 5px;
+                padding: 10px 20px;
+                cursor: pointer;
+                margin-right: 20px;
+            }
+        }
+
+
+    }
+
+    .list-view {
+        background: #F7F8FA;
+
+        .change-view {
+            display: flex;
+            flex-direction: row;
+        }
+
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+
+
+            label {
+                font-weight: 500;
+                margin-bottom: 1rem;
+                font-size: 0.8rem;
+            }
+
+            select {
+                background: white;
+                border-radius: 5px;
+                padding: 20px;
+                color: #1b1b1b;
+                min-width: 100px;
+                font-size: 1.2rem;
+                border: 2px solid #ADBED2;
+                margin-right: 20px;
+            }
+        }
+
+    }
+}

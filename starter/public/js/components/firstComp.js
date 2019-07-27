@@ -630,10 +630,14 @@ var Listings = function (_Component) {
                 "Reset"
               )
             )
-          ),
+          )
+        ),
+        _react2.default.createElement(
+          "section",
+          { className: "list-view" },
           _react2.default.createElement(
-            "section",
-            { className: "list-view" },
+            "div",
+            { className: "container" },
             _react2.default.createElement(
               "section",
               { className: "change-view" },

@@ -38,7 +38,9 @@ export default class Listings extends Component {
               <div className="reset-btn">Reset</div>
             </div>
           </section>
-          <section className="list-view">
+        </div>
+        <section className="list-view">
+          <div className="container">
             <section className="change-view">
               <div className="form-group view-dropdown">
                 <select className="make" name="select-view">
@@ -66,8 +68,8 @@ export default class Listings extends Component {
                 </div>
               </div>
             </section>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
     );
   }
