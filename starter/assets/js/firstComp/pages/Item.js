@@ -92,25 +92,14 @@ export default class Item extends Component {
               </div>
               <div className="details-col">
                 <div className="date">Posted Feb 14th</div>
-                <h3>Black 2015 BWM 654i , 4DR </h3>
+                <h3 className="title">Black 2015 BWM 654i , 4DR </h3>
                 <h4 className="price">$46,876</h4>
                 <div className="more-details">
-                  <div className="info">
-                    <label htmlFor="">Vin</label>
-                    <h1>WHZT9876ZBC</h1>
-                  </div>
                   <div className="info">
                     <label htmlFor="">Mileage</label>
                     <h1>543278</h1>
                   </div>
-                  <div className="info">
-                    <label htmlFor="">Transmition</label>
-                    <h1>Menual</h1>
-                  </div>
-                  <div className="info">
-                    <label htmlFor="">Drive</label>
-                    <h1>Rear Wheel Drive</h1>
-                  </div>
+
                   <div className="info">
                     <label htmlFor="">Condition</label>
                     <h1>Like New</h1>
@@ -120,7 +109,30 @@ export default class Item extends Component {
                     <h1>Black</h1>
                   </div>
                 </div>
-                <div className="descrip">
+                <div className="description">
+                  <label htmlFor="">Description</label>
+                  <p>
+                    BMW stands for “Bavarian Motor Works”. The company is
+                    best-known for its cars, its motorcycle engine manufacturing
+                    predates their first automobile by nine years. BMW AG was
+                    founded in Munich in 1916 and produced airplane engines
+                    during World War I; in 1921, it began building motorcycle
+                    engines for other manufacturers before building their first
+                    bike, the R32, in 1923. (That R32 was the foundation of BMW
+                    motorcycles for decades; its shaft drive was in use until
+                    1994.)
+                  </p>
+                  <p>
+                    BMW stands for “Bavarian Motor Works”. The company is
+                    best-known for its cars, its motorcycle engine manufacturing
+                    predates their first automobile by nine years. BMW AG was
+                    founded in Munich in 1916 and produced airplane engines
+                    during World War I; in 1921, it began building motorcycle
+                    engines for other manufacturers before building their first
+                    bike, the R32, in 1923. (That R32 was the foundation of BMW
+                    motorcycles for decades; its shaft drive was in use until
+                    1994.)
+                  </p>
                   <p>
                     BMW stands for “Bavarian Motor Works”. The company is
                     best-known for its cars, its motorcycle engine manufacturing

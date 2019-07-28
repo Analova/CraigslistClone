@@ -618,7 +618,7 @@ var Item = function (_Component) {
                 ),
                 _react2.default.createElement(
                   "h3",
-                  null,
+                  { className: "title" },
                   "Black 2015 BWM 654i , 4DR "
                 ),
                 _react2.default.createElement(
@@ -635,54 +635,12 @@ var Item = function (_Component) {
                     _react2.default.createElement(
                       "label",
                       { htmlFor: "" },
-                      "Vin"
-                    ),
-                    _react2.default.createElement(
-                      "h1",
-                      null,
-                      "WHZT9876ZBC"
-                    )
-                  ),
-                  _react2.default.createElement(
-                    "div",
-                    { className: "info" },
-                    _react2.default.createElement(
-                      "label",
-                      { htmlFor: "" },
                       "Mileage"
                     ),
                     _react2.default.createElement(
                       "h1",
                       null,
                       "543278"
-                    )
-                  ),
-                  _react2.default.createElement(
-                    "div",
-                    { className: "info" },
-                    _react2.default.createElement(
-                      "label",
-                      { htmlFor: "" },
-                      "Transmition"
-                    ),
-                    _react2.default.createElement(
-                      "h1",
-                      null,
-                      "Menual"
-                    )
-                  ),
-                  _react2.default.createElement(
-                    "div",
-                    { className: "info" },
-                    _react2.default.createElement(
-                      "label",
-                      { htmlFor: "" },
-                      "Drive"
-                    ),
-                    _react2.default.createElement(
-                      "h1",
-                      null,
-                      "Rear Wheel Drive"
                     )
                   ),
                   _react2.default.createElement(
@@ -716,7 +674,22 @@ var Item = function (_Component) {
                 ),
                 _react2.default.createElement(
                   "div",
-                  { className: "descrip" },
+                  { className: "description" },
+                  _react2.default.createElement(
+                    "label",
+                    { htmlFor: "" },
+                    "Description"
+                  ),
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "BMW stands for \u201CBavarian Motor Works\u201D. The company is best-known for its cars, its motorcycle engine manufacturing predates their first automobile by nine years. BMW AG was founded in Munich in 1916 and produced airplane engines during World War I; in 1921, it began building motorcycle engines for other manufacturers before building their first bike, the R32, in 1923. (That R32 was the foundation of BMW motorcycles for decades; its shaft drive was in use until 1994.)"
+                  ),
+                  _react2.default.createElement(
+                    "p",
+                    null,
+                    "BMW stands for \u201CBavarian Motor Works\u201D. The company is best-known for its cars, its motorcycle engine manufacturing predates their first automobile by nine years. BMW AG was founded in Munich in 1916 and produced airplane engines during World War I; in 1921, it began building motorcycle engines for other manufacturers before building their first bike, the R32, in 1923. (That R32 was the foundation of BMW motorcycles for decades; its shaft drive was in use until 1994.)"
+                  ),
                   _react2.default.createElement(
                     "p",
                     null,

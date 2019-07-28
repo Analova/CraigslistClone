@@ -34,7 +34,7 @@
     }
 
     .content-area {
-        background: lightblue;
+
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 20px;
@@ -46,11 +46,11 @@
                         position: relative;
 
                         .arrows {
-                            top: 40%;
-                            bottom: 40%;
+                            top: 0;
+                            bottom: 0;
 
                             padding: 0 20px;
-                            height: 20%;
+                            height: 100%;
                             position: absolute;
                             background: rgba(0, 0, 0, 0.6);
                             display: flex;
@@ -93,5 +93,76 @@
                 }
             }
         }
+
+        .details-col {
+            .date {
+                font-size: 0.9rem;
+                color: #1b1b1b;
+                margin-bottom: 15px;
+            }
+
+            h3 {
+                font-size: 2rem;
+                font-weight: 500;
+                margin-bottom: 15px;
+            }
+
+            h4 {
+                color: rgb(16, 104, 16);
+                font-size: 1.7rem;
+                font-weight: 500;
+                margin-bottom: 15px;
+            }
+
+            .more-details {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 10px;
+                border-bottom: 1px solid grey;
+
+                .info {
+                    margin-bottom: 30px;
+
+                    label {
+                        font-weight: 600;
+                        font-size: 0.8rem;
+                        text-transform: uppercase;
+                        margin-bottom: 10px;
+                        display: block;
+                    }
+
+                    h5 {
+                        font-size: 0.9rem;
+                        font-weight: 300;
+                        text-transform: uppercase;
+                    }
+
+
+
+                }
+
+            }
+
+            .description {
+                margin-top: 30px;
+
+                label {
+                    font-weight: 600;
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                    display: block;
+                }
+
+                p {
+                    color: rgb(46, 44, 44);
+                    font-size: 0.9rem;
+                    line-height: 1.5;
+                    margin-bottom: 1.5rem;
+
+                }
+            }
+        }
+
     }
 }
