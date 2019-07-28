@@ -5,6 +5,25 @@ export default class Listings extends Component {
     super();
     this.state = {};
   }
+  loopItems = () => {
+    let testTags = [1, 2, 3, 4];
+    return testTags.map((item, i) => {
+      return (
+        <div className="item">
+          <div className="image">
+            <div className="price">$8900</div>
+          </div>
+          <div className="details">
+            <h5>
+              2011 Bmw m3
+              <i className="far fa-star" />
+            </h5>
+            <h6>Berlin</h6>
+          </div>
+        </div>
+      );
+    });
+  };
 
   render() {
     const { match, location, history } = this.props;
@@ -57,17 +76,7 @@ export default class Listings extends Component {
                   </select>
                 </div>
               </section>
-              <section className="all-items">
-                <div className="item">
-                  <div className="image">
-                    <div className="price">$8900</div>
-                  </div>
-                  <div className="details">
-                    <h5>Title</h5>
-                    <h6>City</h6>
-                  </div>
-                </div>
-              </section>
+              <section className="all-items">{this.loopItems()}</section>
             </div>
           </section>
         </div>

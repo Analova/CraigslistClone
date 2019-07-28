@@ -532,6 +532,40 @@ var Listings = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Listings.__proto__ || Object.getPrototypeOf(Listings)).call(this));
 
+    _this.loopItems = function () {
+      var testTags = [1, 2, 3, 4];
+      return testTags.map(function (item, i) {
+        return _react2.default.createElement(
+          "div",
+          { className: "item" },
+          _react2.default.createElement(
+            "div",
+            { className: "image" },
+            _react2.default.createElement(
+              "div",
+              { className: "price" },
+              "$8900"
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "details" },
+            _react2.default.createElement(
+              "h5",
+              null,
+              "2011 Bmw m3",
+              _react2.default.createElement("i", { className: "far fa-star" })
+            ),
+            _react2.default.createElement(
+              "h6",
+              null,
+              "Berlin"
+            )
+          )
+        );
+      });
+    };
+
     _this.state = {};
     return _this;
   }
@@ -689,33 +723,7 @@ var Listings = function (_Component) {
               _react2.default.createElement(
                 "section",
                 { className: "all-items" },
-                _react2.default.createElement(
-                  "div",
-                  { className: "item" },
-                  _react2.default.createElement(
-                    "div",
-                    { className: "image" },
-                    _react2.default.createElement(
-                      "div",
-                      { className: "price" },
-                      "$8900"
-                    )
-                  ),
-                  _react2.default.createElement(
-                    "div",
-                    { className: "details" },
-                    _react2.default.createElement(
-                      "h5",
-                      null,
-                      "Title"
-                    ),
-                    _react2.default.createElement(
-                      "h6",
-                      null,
-                      "City"
-                    )
-                  )
-                )
+                this.loopItems()
               )
             )
           )
