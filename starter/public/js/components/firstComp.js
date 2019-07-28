@@ -482,203 +482,246 @@ var Item = function (_Component) {
 
       return _react2.default.createElement(
         "div",
-        { className: "listings" },
+        { className: "details" },
         _react2.default.createElement(
           "div",
           { className: "container" },
           _react2.default.createElement(
-            "section",
-            { id: "submenu" },
+            "div",
+            { className: "white-box" },
             _react2.default.createElement(
-              "div",
-              { className: "direction" },
+              "section",
+              { id: "submenu" },
               _react2.default.createElement(
                 "div",
-                { className: "previous" },
-                "Previous"
+                { className: "direction" },
+                _react2.default.createElement(
+                  "a",
+                  { href: "#", className: "previous" },
+                  "Previous"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "#", className: "next" },
+                  "Next"
+                )
               ),
               _react2.default.createElement(
-                "div",
-                { className: "next" },
-                "Next"
+                "nav",
+                { className: "sublinks" },
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "More Ads by User"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "Print"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "Share"
+                ),
+                _react2.default.createElement(
+                  "a",
+                  { href: "#" },
+                  "Contact Seller"
+                )
               )
             ),
             _react2.default.createElement(
-              "nav",
-              { className: "sublings" },
-              _react2.default.createElement(
-                "a",
-                { href: "#" },
-                "More Ads by User"
-              ),
-              _react2.default.createElement(
-                "a",
-                { href: "#" },
-                "Print"
-              ),
-              _react2.default.createElement(
-                "a",
-                { href: "#" },
-                "Share"
-              ),
-              _react2.default.createElement(
-                "a",
-                { href: "#" },
-                "Contact Seller"
-              )
-            )
-          ),
-          _react2.default.createElement(
-            "section",
-            { className: "" },
-            _react2.default.createElement(
-              "div",
-              { className: "media-col" },
+              "section",
+              { className: "content-area" },
               _react2.default.createElement(
                 "div",
-                { className: "gallery" },
+                { className: "media-col" },
                 _react2.default.createElement(
                   "div",
-                  { className: "slider" },
+                  { className: "gallery" },
                   _react2.default.createElement(
                     "div",
-                    { className: "main-img" },
+                    { className: "slider" },
                     _react2.default.createElement(
                       "div",
-                      { className: "left-arrow" },
-                      "left"
+                      { className: "main-img" },
+                      _react2.default.createElement(
+                        "div",
+                        { className: "arrows left-arrow" },
+                        "<"
+                      ),
+                      _react2.default.createElement(
+                        "div",
+                        { className: "arrows right-arrow" },
+                        " ",
+                        ">",
+                        " "
+                      ),
+                      _react2.default.createElement("div", {
+                        className: "img-1",
+                        style: {
+                          backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
+                        }
+                      })
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "thumbnails" },
+                    _react2.default.createElement("div", {
+                      className: "thumb-img",
+                      style: {
+                        backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
+                      }
+                    }),
+                    _react2.default.createElement("div", {
+                      className: "thumb-img",
+                      style: {
+                        backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
+                      }
+                    }),
+                    _react2.default.createElement("div", {
+                      className: "thumb-img",
+                      style: {
+                        backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
+                      }
+                    }),
+                    _react2.default.createElement("div", {
+                      className: "thumb-img",
+                      style: {
+                        backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
+                      }
+                    }),
+                    _react2.default.createElement("div", {
+                      className: "thumb-img",
+                      style: {
+                        backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
+                      }
+                    }),
+                    _react2.default.createElement("div", {
+                      className: "thumb-img",
+                      style: {
+                        backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
+                      }
+                    })
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "details-col" },
+                _react2.default.createElement(
+                  "div",
+                  { className: "date" },
+                  "Posted Feb 14th"
+                ),
+                _react2.default.createElement(
+                  "h3",
+                  null,
+                  "Black 2015 BWM 654i , 4DR "
+                ),
+                _react2.default.createElement(
+                  "h4",
+                  { className: "price" },
+                  "$46,876"
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { className: "more-details" },
+                  _react2.default.createElement(
+                    "div",
+                    { className: "info" },
+                    _react2.default.createElement(
+                      "label",
+                      { htmlFor: "" },
+                      "Vin"
                     ),
                     _react2.default.createElement(
-                      "div",
-                      { className: "right-arrow" },
-                      " right "
+                      "h1",
+                      null,
+                      "WHZT9876ZBC"
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "info" },
+                    _react2.default.createElement(
+                      "label",
+                      { htmlFor: "" },
+                      "Mileage"
+                    ),
+                    _react2.default.createElement(
+                      "h1",
+                      null,
+                      "543278"
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "info" },
+                    _react2.default.createElement(
+                      "label",
+                      { htmlFor: "" },
+                      "Transmition"
+                    ),
+                    _react2.default.createElement(
+                      "h1",
+                      null,
+                      "Menual"
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "info" },
+                    _react2.default.createElement(
+                      "label",
+                      { htmlFor: "" },
+                      "Drive"
+                    ),
+                    _react2.default.createElement(
+                      "h1",
+                      null,
+                      "Rear Wheel Drive"
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "info" },
+                    _react2.default.createElement(
+                      "label",
+                      { htmlFor: "" },
+                      "Condition"
+                    ),
+                    _react2.default.createElement(
+                      "h1",
+                      null,
+                      "Like New"
+                    )
+                  ),
+                  _react2.default.createElement(
+                    "div",
+                    { className: "info" },
+                    _react2.default.createElement(
+                      "label",
+                      { htmlFor: "" },
+                      "Extra Color"
+                    ),
+                    _react2.default.createElement(
+                      "h1",
+                      null,
+                      "Black"
                     )
                   )
                 ),
                 _react2.default.createElement(
                   "div",
-                  { className: "thumbnails" },
+                  { className: "descrip" },
                   _react2.default.createElement(
-                    "div",
-                    { className: "thumb-" },
-                    "img"
-                  )
-                )
-              )
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "details-col" },
-              _react2.default.createElement(
-                "div",
-                { className: "date" },
-                "Posted Feb 14th"
-              ),
-              _react2.default.createElement(
-                "h3",
-                null,
-                "Black 2015 BWM 654i , 4DR "
-              ),
-              _react2.default.createElement(
-                "h4",
-                { className: "price" },
-                "$46,876"
-              ),
-              _react2.default.createElement(
-                "div",
-                { className: "more-details" },
-                _react2.default.createElement(
-                  "div",
-                  { className: "info" },
-                  _react2.default.createElement(
-                    "label",
-                    { htmlFor: "" },
-                    "Vin"
-                  ),
-                  _react2.default.createElement(
-                    "h1",
+                    "p",
                     null,
-                    "WHZT9876ZBC"
+                    "BMW stands for \u201CBavarian Motor Works\u201D. The company is best-known for its cars, its motorcycle engine manufacturing predates their first automobile by nine years. BMW AG was founded in Munich in 1916 and produced airplane engines during World War I; in 1921, it began building motorcycle engines for other manufacturers before building their first bike, the R32, in 1923. (That R32 was the foundation of BMW motorcycles for decades; its shaft drive was in use until 1994.)"
                   )
-                ),
-                _react2.default.createElement(
-                  "div",
-                  { className: "info" },
-                  _react2.default.createElement(
-                    "label",
-                    { htmlFor: "" },
-                    "Mileage"
-                  ),
-                  _react2.default.createElement(
-                    "h1",
-                    null,
-                    "543278"
-                  )
-                ),
-                _react2.default.createElement(
-                  "div",
-                  { className: "info" },
-                  _react2.default.createElement(
-                    "label",
-                    { htmlFor: "" },
-                    "Transmition"
-                  ),
-                  _react2.default.createElement(
-                    "h1",
-                    null,
-                    "Menual"
-                  )
-                ),
-                _react2.default.createElement(
-                  "div",
-                  { className: "info" },
-                  _react2.default.createElement(
-                    "label",
-                    { htmlFor: "" },
-                    "Drive"
-                  ),
-                  _react2.default.createElement(
-                    "h1",
-                    null,
-                    "Rear Wheel Drive"
-                  )
-                ),
-                _react2.default.createElement(
-                  "div",
-                  { className: "info" },
-                  _react2.default.createElement(
-                    "label",
-                    { htmlFor: "" },
-                    "Condition"
-                  ),
-                  _react2.default.createElement(
-                    "h1",
-                    null,
-                    "Like New"
-                  )
-                ),
-                _react2.default.createElement(
-                  "div",
-                  { className: "info" },
-                  _react2.default.createElement(
-                    "label",
-                    { htmlFor: "" },
-                    "Extra Color"
-                  ),
-                  _react2.default.createElement(
-                    "h1",
-                    null,
-                    "Black"
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                "div",
-                { className: "descrip" },
-                _react2.default.createElement(
-                  "p",
-                  null,
-                  "BMW stands for \u201CBavarian Motor Works\u201D. The company is best-known for its cars, its motorcycle engine manufacturing predates their first automobile by nine years. BMW AG was founded in Munich in 1916 and produced airplane engines during World War I; in 1921, it began building motorcycle engines for other manufacturers before building their first bike, the R32, in 1923. (That R32 was the foundation of BMW motorcycles for decades; its shaft drive was in use until 1994.)"
                 )
               )
             )
