@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Gallery from "./components/Gallery";
 
 export default class Item extends Component {
   constructor() {
@@ -30,65 +31,7 @@ export default class Item extends Component {
             </section>
             <section className="content-area">
               <div className="media-col">
-                <div className="gallery">
-                  <div className="slider">
-                    <div className="main-img">
-                      <div className="arrows left-arrow">{"<"}</div>
-                      <div className="arrows right-arrow"> {">"} </div>
-                      <div
-                        className="img-1"
-                        style={{
-                          backgroundImage:
-                            "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <div className="thumbnails">
-                    <div
-                      className="thumb-img"
-                      style={{
-                        backgroundImage:
-                          "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                      }}
-                    />
-                    <div
-                      className="thumb-img"
-                      style={{
-                        backgroundImage:
-                          "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                      }}
-                    />
-                    <div
-                      className="thumb-img"
-                      style={{
-                        backgroundImage:
-                          "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                      }}
-                    />
-                    <div
-                      className="thumb-img"
-                      style={{
-                        backgroundImage:
-                          "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                      }}
-                    />
-                    <div
-                      className="thumb-img"
-                      style={{
-                        backgroundImage:
-                          "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                      }}
-                    />
-                    <div
-                      className="thumb-img"
-                      style={{
-                        backgroundImage:
-                          "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                      }}
-                    />
-                  </div>
-                </div>
+                <Gallery />
               </div>
               <div className="details-col">
                 <div className="date">Posted Feb 14th</div>

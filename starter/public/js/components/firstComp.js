@@ -12,11 +12,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(22);
+var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(560);
+var _reactRouterDom = __webpack_require__(561);
 
 var _Header = __webpack_require__(241);
 
@@ -95,7 +95,7 @@ exports.default = App;
 "use strict";
 
 
-var _react = __webpack_require__(22);
+var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -127,7 +127,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(22);
+var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -219,7 +219,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(22);
+var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -283,7 +283,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(22);
+var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -448,9 +448,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(22);
+var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _Gallery = __webpack_require__(246);
+
+var _Gallery2 = _interopRequireDefault(_Gallery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -537,76 +541,7 @@ var Item = function (_Component) {
               _react2.default.createElement(
                 "div",
                 { className: "media-col" },
-                _react2.default.createElement(
-                  "div",
-                  { className: "gallery" },
-                  _react2.default.createElement(
-                    "div",
-                    { className: "slider" },
-                    _react2.default.createElement(
-                      "div",
-                      { className: "main-img" },
-                      _react2.default.createElement(
-                        "div",
-                        { className: "arrows left-arrow" },
-                        "<"
-                      ),
-                      _react2.default.createElement(
-                        "div",
-                        { className: "arrows right-arrow" },
-                        " ",
-                        ">",
-                        " "
-                      ),
-                      _react2.default.createElement("div", {
-                        className: "img-1",
-                        style: {
-                          backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                        }
-                      })
-                    )
-                  ),
-                  _react2.default.createElement(
-                    "div",
-                    { className: "thumbnails" },
-                    _react2.default.createElement("div", {
-                      className: "thumb-img",
-                      style: {
-                        backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                      }
-                    }),
-                    _react2.default.createElement("div", {
-                      className: "thumb-img",
-                      style: {
-                        backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                      }
-                    }),
-                    _react2.default.createElement("div", {
-                      className: "thumb-img",
-                      style: {
-                        backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                      }
-                    }),
-                    _react2.default.createElement("div", {
-                      className: "thumb-img",
-                      style: {
-                        backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                      }
-                    }),
-                    _react2.default.createElement("div", {
-                      className: "thumb-img",
-                      style: {
-                        backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                      }
-                    }),
-                    _react2.default.createElement("div", {
-                      className: "thumb-img",
-                      style: {
-                        backgroundImage: "url('https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg')"
-                      }
-                    })
-                  )
-                )
+                _react2.default.createElement(_Gallery2.default, null)
               ),
               _react2.default.createElement(
                 "div",
@@ -723,7 +658,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(22);
+var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -947,6 +882,137 @@ var Listings = function (_Component) {
 }(_react.Component);
 
 exports.default = Listings;
+
+/***/ }),
+
+/***/ 246:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(18);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Gallery = function (_Component) {
+  _inherits(Gallery, _Component);
+
+  function Gallery() {
+    _classCallCheck(this, Gallery);
+
+    var _this = _possibleConstructorReturn(this, (Gallery.__proto__ || Object.getPrototypeOf(Gallery)).call(this));
+
+    _this.allImagsLoop = function () {
+      console.log(_this.state.allImgs);
+      return _this.state.allImgs.map(function (item, i) {
+        return _react2.default.createElement("div", {
+          key: i,
+          onClick: _this.clickedThumb.bind(null, i),
+          className: "thumb-img",
+          style: {
+            backgroundImage: "url('" + item + "')"
+          }
+        });
+      });
+    };
+
+    _this.nextBtn = function () {
+      if (_this.state.currentIndex !== _this.state.allImgs.length - 1) {
+        _this.setState({
+          currentIndex: _this.state.currentIndex + 1
+        });
+      }
+    };
+
+    _this.prevBtn = function () {
+      if (_this.state.currentIndex != 0) {
+        _this.setState({
+          currentIndex: _this.state.currentIndex - 1
+        });
+      }
+    };
+
+    _this.clickedThumb = function (index) {
+      _this.setState({
+        currentIndex: index
+      });
+    };
+
+    _this.state = {
+      allImgs: "",
+      currentImg: "",
+      currentIndex: 0
+    };
+    return _this;
+  }
+
+  _createClass(Gallery, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var allImgs = ["https://i.ebayimg.com/images/g/eGEAAOSwRmNdFgCP/s-l640.jpg", "https://auto.ndtvimg.com/bike-images/medium/ducati/panigale-v4/ducati-panigale-v4.jpg?v=13", "https://image3.mouthshut.com/images/imagesp/925669962s.jpg", "https://www.ducati-richmond.com/wp-content/uploads/2016/07/diavelnew.png", "https://images-na.ssl-images-amazon.com/images/I/71o9Wz1kNqL._SX425_.jpg", "https://www.motorrad-bilder.at/slideshows/291/016120/ducati-939-ilmberger-2018-1.jpg"];
+      this.setState({
+        allImgs: allImgs,
+        currentImg: allImgs[this.state.currentIndex]
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "gallery" },
+        _react2.default.createElement(
+          "div",
+          { className: "slider" },
+          _react2.default.createElement(
+            "div",
+            { className: "main-img" },
+            _react2.default.createElement(
+              "div",
+              { className: "arrows left-arrow", onClick: this.prevBtn },
+              _react2.default.createElement("i", { className: "fas fa-chevron-left" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "arrows right-arrow", onClick: this.nextBtn },
+              _react2.default.createElement("i", { className: "fas fa-chevron-right" })
+            ),
+            _react2.default.createElement("div", {
+              className: "img-1",
+              style: {
+                backgroundImage: "url('" + this.state.allImgs[this.state.currentIndex] + "')"
+              }
+            })
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "thumbnails" },
+          this.allImagsLoop()
+        )
+      );
+    }
+  }]);
+
+  return Gallery;
+}(_react.Component);
+
+exports.default = Gallery;
 
 /***/ })
 
