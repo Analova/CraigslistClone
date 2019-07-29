@@ -1,52 +1,71 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Home extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      categoriesData: ""
+    };
+  }
+
+  componentWillMount() {
+    const self = this;
+    axios
+      .get("/api/categories")
+      .then(function(response) {
+        self.setState(
+          {
+            categoriesData: response.data
+          },
+          () => {
+            console.log(self.state);
+          }
+        );
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 
   loopCategories = () => {
-    let testArray = [1, 1, 1, 1, 1, 1, 1];
-    return testArray.map((item, i) => {
-      return (
-        <div key={i} className="categories">
-          <div className="title">Comunity</div>
-          <div className="group-links">
-            <a href="#" className="link">
-              Comunity
-            </a>
-            <a href="#" className="link">
-              General
-            </a>
-            <a href="#" className="link">
-              Activities
-            </a>
-            <a href="#" className="link">
-              Artists
-            </a>
-            <a href="#" className="link">
-              Groups
-            </a>
-            <a href="#" className="link">
-              Local News
-            </a>
-            <a href="#" className="link">
-              Child Care
-            </a>
-            <a href="#" className="link">
-              Events
-            </a>
-            <a href="#" className="link">
-              Pets
-            </a>
-            <a href="#" className="link">
-              Activities
-            </a>
+    // if statement for data
+    if (this.state.categoriesData != "") {
+      // return back the loop of categories
+      return this.state.categoriesData.map((category, i) => {
+        // created loop for the listings
+        const loopListings = () => {
+          return category.listings.map((listing, index) => {
+            return (
+              <a
+                href={`${category.title}/${listing.slug}`}
+                className="link"
+                key={index}
+              >
+                {listing.name}
+              </a>
+            );
+          });
+        };
+        return (
+          <div key={i} className="categories">
+            <div className="title">{category.title}</div>
+            <div
+              className={`group-links
+              ${
+                category.title === "jobs" || category.title === "housing"
+                  ? "single-col"
+                  : ""
+              }`}
+            >
+              {loopListings()}
+            </div>
           </div>
-        </div>
-      );
-    });
+        );
+      });
+    } else {
+      return "Loading";
+    }
   };
 
   loopTage = () => {

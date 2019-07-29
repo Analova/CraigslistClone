@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 235:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16,25 +16,25 @@ var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(561);
+var _reactRouterDom = __webpack_require__(587);
 
-var _Header = __webpack_require__(241);
+var _Header = __webpack_require__(266);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Home = __webpack_require__(243);
+var _Home = __webpack_require__(268);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Listings = __webpack_require__(245);
+var _Listings = __webpack_require__(270);
 
 var _Listings2 = _interopRequireDefault(_Listings);
 
-var _Item = __webpack_require__(244);
+var _Item = __webpack_require__(269);
 
 var _Item2 = _interopRequireDefault(_Item);
 
-var _Category = __webpack_require__(242);
+var _Category = __webpack_require__(267);
 
 var _Category2 = _interopRequireDefault(_Category);
 
@@ -89,7 +89,7 @@ exports.default = App;
 
 /***/ }),
 
-/***/ 240:
+/***/ 265:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -99,11 +99,11 @@ var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(106);
+var _reactDom = __webpack_require__(107);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = __webpack_require__(235);
+var _App = __webpack_require__(242);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -115,7 +115,7 @@ _reactDom2.default.render(_react2.default.createElement(_App2.default, null), ap
 
 /***/ }),
 
-/***/ 241:
+/***/ 266:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -207,7 +207,7 @@ exports.default = Header;
 
 /***/ }),
 
-/***/ 242:
+/***/ 267:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -271,7 +271,7 @@ exports.default = Category;
 
 /***/ }),
 
-/***/ 243:
+/***/ 268:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -286,6 +286,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(247);
+
+var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -304,72 +308,44 @@ var Home = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this));
 
     _this.loopCategories = function () {
-      var testArray = [1, 1, 1, 1, 1, 1, 1];
-      return testArray.map(function (item, i) {
-        return _react2.default.createElement(
-          "div",
-          { key: i, className: "categories" },
-          _react2.default.createElement(
+      // if statement for data
+      if (_this.state.categoriesData != "") {
+        // return back the loop of categories
+        return _this.state.categoriesData.map(function (category, i) {
+          // created loop for the listings
+          var loopListings = function loopListings() {
+            return category.listings.map(function (listing, index) {
+              return _react2.default.createElement(
+                "a",
+                {
+                  href: category.title + "/" + listing.slug,
+                  className: "link",
+                  key: index
+                },
+                listing.name
+              );
+            });
+          };
+          return _react2.default.createElement(
             "div",
-            { className: "title" },
-            "Comunity"
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "group-links" },
+            { key: i, className: "categories" },
             _react2.default.createElement(
-              "a",
-              { href: "#", className: "link" },
-              "Comunity"
+              "div",
+              { className: "title" },
+              category.title
             ),
             _react2.default.createElement(
-              "a",
-              { href: "#", className: "link" },
-              "General"
-            ),
-            _react2.default.createElement(
-              "a",
-              { href: "#", className: "link" },
-              "Activities"
-            ),
-            _react2.default.createElement(
-              "a",
-              { href: "#", className: "link" },
-              "Artists"
-            ),
-            _react2.default.createElement(
-              "a",
-              { href: "#", className: "link" },
-              "Groups"
-            ),
-            _react2.default.createElement(
-              "a",
-              { href: "#", className: "link" },
-              "Local News"
-            ),
-            _react2.default.createElement(
-              "a",
-              { href: "#", className: "link" },
-              "Child Care"
-            ),
-            _react2.default.createElement(
-              "a",
-              { href: "#", className: "link" },
-              "Events"
-            ),
-            _react2.default.createElement(
-              "a",
-              { href: "#", className: "link" },
-              "Pets"
-            ),
-            _react2.default.createElement(
-              "a",
-              { href: "#", className: "link" },
-              "Activities"
+              "div",
+              {
+                className: "group-links\n              " + (category.title === "jobs" || category.title === "housing" ? "single-col" : "")
+              },
+              loopListings()
             )
-          )
-        );
-      });
+          );
+        });
+      } else {
+        return "Loading";
+      }
     };
 
     _this.loopTage = function () {
@@ -383,11 +359,27 @@ var Home = function (_Component) {
       });
     };
 
-    _this.state = {};
+    _this.state = {
+      categoriesData: ""
+    };
     return _this;
   }
 
   _createClass(Home, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var self = this;
+      _axios2.default.get("/api/categories").then(function (response) {
+        self.setState({
+          categoriesData: response.data
+        }, function () {
+          console.log(self.state);
+        });
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
@@ -436,7 +428,7 @@ exports.default = Home;
 
 /***/ }),
 
-/***/ 244:
+/***/ 269:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -452,7 +444,7 @@ var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Gallery = __webpack_require__(246);
+var _Gallery = __webpack_require__(271);
 
 var _Gallery2 = _interopRequireDefault(_Gallery);
 
@@ -646,7 +638,7 @@ exports.default = Item;
 
 /***/ }),
 
-/***/ 245:
+/***/ 270:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -885,7 +877,7 @@ exports.default = Listings;
 
 /***/ }),
 
-/***/ 246:
+/***/ 271:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1016,4 +1008,4 @@ exports.default = Gallery;
 
 /***/ })
 
-},[240]);
+},[265]);
