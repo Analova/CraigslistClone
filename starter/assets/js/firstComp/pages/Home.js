@@ -18,7 +18,7 @@ export default class Home extends Component {
     }
     const self = this;
     axios
-      .get(`/api/${match.params.city}/categories`)
+      .get(`/api/${match.params.city}`)
       .then(function(response) {
         self.setState(
           {

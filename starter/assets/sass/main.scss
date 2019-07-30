@@ -41,10 +41,42 @@ header {
       font-size: 2rem;
     }
 
-    .city {
+    .city-dropdown {
       margin: 0 20px 0;
       display: flex;
       padding: 15px 20px;
+      position: relative;
+
+      .scroll-area {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.6);
+        top: 35px;
+        left: 0;
+        min-width: 150%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+          visibility: visible;
+          top: 50px;
+          opacity: 1;
+        }
+
+        ul {
+          li {
+            padding: 15px;
+            cursor: pointer;
+
+            &:hover {
+              background: rgba(0, 0, 0, 0.3);
+            }
+          }
+        }
+      }
+
     }
 
   }

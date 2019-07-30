@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 242:
+/***/ 243:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -103,7 +103,7 @@ var _reactDom = __webpack_require__(107);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = __webpack_require__(242);
+var _App = __webpack_require__(243);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -131,6 +131,10 @@ var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _axios = __webpack_require__(157);
+
+var _axios2 = _interopRequireDefault(_axios);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -147,11 +151,51 @@ var Header = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).call(this));
 
-    _this.state = {};
+    _this.clickedCityDropdown = function () {
+      _this.setState({
+        cityDropdown: !_this.state.cityDropdown
+      });
+    };
+
+    _this.selectCity = function (city) {
+      _this.setState({
+        selectedCity: city
+      });
+    };
+
+    _this.loopCities = function () {
+      return _this.state.citiesData.map(function (item, i) {
+        return _react2.default.createElement(
+          "li",
+          { key: i, onClick: _this.selectCity.bind(null, item.title) },
+          item.title
+        );
+      });
+    };
+
+    _this.state = {
+      cityDropdown: false,
+      selectedCity: "Berlin",
+      citiesData: []
+    };
     return _this;
   }
 
   _createClass(Header, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var self = this;
+      _axios2.default.get("/api/cities").then(function (response) {
+        self.setState({
+          citiesData: response.data
+        }, function () {
+          console.log(self.state);
+        });
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
@@ -170,9 +214,26 @@ var Header = function (_Component) {
             ),
             _react2.default.createElement(
               "div",
-              { className: "city" },
-              "San Fransisco ",
-              _react2.default.createElement("i", { className: "fas fa-angle-down" })
+              {
+                className: "city-dropdown ",
+                onClick: this.clickedCityDropdown
+              },
+              this.state.selectedCity,
+              " ",
+              _react2.default.createElement("i", {
+                className: "fas fa-angle-down " + (this.state.cityDropdown ? "fas fa-angle-up" : "fas fa-angle-down")
+              }),
+              _react2.default.createElement(
+                "div",
+                {
+                  className: "scroll-area \n              " + (this.state.cityDropdown ? "active" : "")
+                },
+                _react2.default.createElement(
+                  "ul",
+                  null,
+                  this.loopCities()
+                )
+              )
             )
           ),
           _react2.default.createElement(
@@ -287,7 +348,7 @@ var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(247);
+var _axios = __webpack_require__(157);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -379,7 +440,7 @@ var Home = function (_Component) {
         history.push("/nyc");
       }
       var self = this;
-      _axios2.default.get("/api/" + match.params.city + "/categories").then(function (response) {
+      _axios2.default.get("/api/" + match.params.city).then(function (response) {
         self.setState({
           categoriesData: response.data
         }, function () {
