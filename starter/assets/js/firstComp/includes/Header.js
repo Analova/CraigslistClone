@@ -37,9 +37,18 @@ export default class Header extends Component {
   };
 
   selectCity = city => {
-    this.setState({
-      selectedCity: city
-    });
+    this.setState(
+      {
+        selectedCity: city
+      },
+      () => {
+        let city = this.state.citiesData.filter(item => {
+          return item.title === this.state.selectedCity;
+        });
+        const { match, history } = this.props;
+        history.push(`/${city[0].slug}`);
+      }
+    );
   };
 
   loopCities = () => {

@@ -67,7 +67,7 @@ var App = function (_Component) {
         _react2.default.createElement(
           "div",
           null,
-          _react2.default.createElement(_Header2.default, null),
+          _react2.default.createElement(_reactRouterDom.Route, { path: "/", component: _Header2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/", component: _Home2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/:city", component: _Home2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/:city/:category", component: _Category2.default }),
@@ -160,6 +160,15 @@ var Header = function (_Component) {
     _this.selectCity = function (city) {
       _this.setState({
         selectedCity: city
+      }, function () {
+        var city = _this.state.citiesData.filter(function (item) {
+          return item.title === _this.state.selectedCity;
+        });
+        var _this$props = _this.props,
+            match = _this$props.match,
+            history = _this$props.history;
+
+        history.push("/" + city[0].slug);
       });
     };
 
