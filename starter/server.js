@@ -2,15 +2,27 @@ const express = require("express");
 const serveStatic = require("serve-static");
 const path = require("path");
 const categoriesData = require("./data/categories.js");
+const citiesData = require("./data/cities.js");
+const itemsData = require("./data/items.js");
 
 // create the express app
 const app = express();
 
 //create middleware to handle the serving of the app
 app.use("/", serveStatic(path.join(__dirname, "/public")));
-app.get("/api/categories", function(req, res) {
+//api
+app.get("/api/cities", function(req, res) {
+  res.json(citiesData);
+});
+//api
+app.get("/api/:city/:categories", function(req, res) {
   res.json(categoriesData);
 });
+//api
+app.get("/api/:city/:categories/:listing/:items", function(req, res) {
+  res.json(itemsData);
+});
+
 app.get("*", function(req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
