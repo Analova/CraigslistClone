@@ -148,7 +148,7 @@ module.exports = [
     ]
   },
   {
-    title: "for- sales",
+    title: "for-sales",
     listings: [
       {
         name: "antiques",

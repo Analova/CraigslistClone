@@ -35,6 +35,7 @@ export default class Home extends Component {
   }
 
   loopCategories = () => {
+    const { match, history } = this.props;
     // if statement for data
     if (this.state.categoriesData != "") {
       // return back the loop of categories
@@ -55,7 +56,12 @@ export default class Home extends Component {
         };
         return (
           <div key={i} className="categories">
-            <div className="title">{category.title}</div>
+            <a
+              href={`/${match.params.city}/${category.title}`}
+              className="title"
+            >
+              {category.title}
+            </a>
             <div
               className={`group-links
               ${
