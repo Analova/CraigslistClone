@@ -9,7 +9,6 @@ export default class Home extends Component {
     };
   }
 
-  componentWillMount() {}
 
   componentDidMount() {
     const { match, history } = this.props;

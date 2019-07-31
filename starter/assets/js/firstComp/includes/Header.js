@@ -21,7 +21,7 @@ export default class Header extends Component {
             citiesData: response.data
           },
           () => {
-            console.log(self.state);
+            //console.log(self.state);
           }
         );
       })

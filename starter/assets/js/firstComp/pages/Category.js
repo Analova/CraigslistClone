@@ -19,30 +19,61 @@
 // }
 
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Category extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      itemsData: []
+    };
   }
+
+  componentWillMount() {
+    const { match, history } = this.props;
+    console.log(match.params.category);
+    const self = this;
+    axios
+      .get(`/api/${match.params.city}/${match.params.category}`)
+      .then(function(response) {
+        self.setState(
+          {
+            itemsData: response.data
+          },
+          () => {
+            console.log(self.state);
+          }
+        );
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+
   loopItems = () => {
-    let testArray = [1, 2, 3, 4];
-    return testArray.map((item, i) => {
-      return (
-        <div className="item">
-          <div className="image">
-            <div className="price">$8900</div>
+    if (this.state.itemsData != undefined) {
+      return this.state.itemsData.map((item, i) => {
+        return (
+          <div key={i} className="item">
+            <div
+              className="image"
+              style={{
+                backgroundImage: `url('${item.images[0]}')`
+              }}
+            >
+              <div className="price">{item.price}</div>
+            </div>
+            <div className="details">
+              <h5>
+                {item.title}
+                <i className="far fa-star" />
+              </h5>
+              <h6>{item.city}</h6>
+            </div>
           </div>
-          <div className="details">
-            <h5>
-              2011 Bmw m3
-              <i className="far fa-star" />
-            </h5>
-            <h6>Berlin</h6>
-          </div>
-        </div>
-      );
-    });
+        );
+      });
+    }
   };
 
   showMakeModelDropdown = () => {
