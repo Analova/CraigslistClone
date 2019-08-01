@@ -299,29 +299,13 @@ var _axios2 = _interopRequireDefault(_axios);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // import React, { Component } from "react";
-
-// export default class Category extends Component {
-//   constructor() {
-//     super();
-//     this.state = {};
-//   }
-
-//   render() {
-//     const { match, location, history } = this.props;
-//     return (
-//       <div className="listings">
-//         <div className="container">
-//           This category is {match.params.category}
-//         </div>
-//       </div>
-//     );
-//   }
-// }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Category = function (_Component) {
   _inherits(Category, _Component);
@@ -391,11 +375,41 @@ var Category = function (_Component) {
             ),
             _react2.default.createElement(
               "select",
-              { className: "make", name: "make" },
+              {
+                className: "make",
+                name: "make",
+                onChange: _this.handleChange,
+                value: _this.state.make
+              },
               _react2.default.createElement(
                 "option",
                 { value: "bmw" },
                 "bmw"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "audi" },
+                "audi"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "honda" },
+                "honda"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "toyota" },
+                "toyota"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "vw" },
+                "vw"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "benz" },
+                "benz"
               )
             )
           ),
@@ -409,11 +423,36 @@ var Category = function (_Component) {
             ),
             _react2.default.createElement(
               "select",
-              { className: "model", name: "model" },
+              {
+                className: "model",
+                name: "model",
+                onChange: _this.handleChange,
+                value: _this.state.model
+              },
               _react2.default.createElement(
                 "option",
-                { value: "bmw" },
-                "bmw"
+                { value: "A 2011" },
+                "A 2011"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "B 2015" },
+                "B 2015"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "A 2016" },
+                "A 2016"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "C 2010" },
+                "C 2010"
+              ),
+              _react2.default.createElement(
+                "option",
+                { value: "S 2014" },
+                "S 2014"
               )
             )
           )
@@ -421,8 +460,23 @@ var Category = function (_Component) {
       }
     };
 
+    _this.handleChange = function (event) {
+      var name = event.target.name;
+      var value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+
+      _this.setState(_defineProperty({}, name, value), function () {
+        console.log(_this.state);
+      });
+    };
+
     _this.state = {
-      itemsData: []
+      itemsData: [],
+      min_price: 100,
+      max_price: 0,
+      make: "bmw",
+      mode: "A 2011",
+      select_view: "gallery",
+      sort: "newest"
     };
     return _this;
   }
@@ -476,20 +530,60 @@ var Category = function (_Component) {
                 { className: "min-max" },
                 _react2.default.createElement(
                   "select",
-                  { className: "min-price", name: "min-price" },
+                  {
+                    className: "min-price",
+                    name: "min_price",
+                    onChange: this.handleChange,
+                    value: this.state.min_price
+                  },
                   _react2.default.createElement(
                     "option",
                     { value: "0" },
                     "0"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "20000" },
+                    "20000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "30000" },
+                    "30000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "40000" },
+                    "40000"
                   )
                 ),
                 _react2.default.createElement(
                   "select",
-                  { className: "max-price", name: "max-price" },
+                  {
+                    className: "max-price",
+                    name: "max_price",
+                    onChange: this.handleChange,
+                    value: this.state.max_price
+                  },
                   _react2.default.createElement(
                     "option",
-                    { value: "1000" },
-                    "1000"
+                    { value: "50000" },
+                    "50000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "60000" },
+                    "60000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "70000" },
+                    "70000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "80000" },
+                    "80000"
                   )
                 )
               )
@@ -524,11 +618,16 @@ var Category = function (_Component) {
                   { className: "form-group view-dropdown" },
                   _react2.default.createElement(
                     "select",
-                    { className: "make", name: "select-view" },
+                    {
+                      className: "make",
+                      name: "select_view",
+                      onChange: this.handleChange,
+                      value: this.state.select_view
+                    },
                     _react2.default.createElement(
                       "option",
                       { value: "gallery" },
-                      "Callery View"
+                      "Gallery"
                     ),
                     _react2.default.createElement(
                       "option",
@@ -538,7 +637,7 @@ var Category = function (_Component) {
                     _react2.default.createElement(
                       "option",
                       { value: "thums" },
-                      "List"
+                      "Thumb"
                     )
                   )
                 ),
@@ -547,16 +646,21 @@ var Category = function (_Component) {
                   { className: "form-group sort-dropdown" },
                   _react2.default.createElement(
                     "select",
-                    { className: "sort-dropdown", name: "sort-dropdown" },
-                    _react2.default.createElement(
-                      "option",
-                      { value: "gallery" },
-                      "Callery View"
-                    ),
+                    {
+                      className: "sort-dropdown",
+                      name: "sort",
+                      onChange: this.handleChange,
+                      value: this.state.sort
+                    },
                     _react2.default.createElement(
                       "option",
                       { value: "newest" },
                       "Newest"
+                    ),
+                    _react2.default.createElement(
+                      "option",
+                      { value: "oldest" },
+                      "Oldest"
                     )
                   )
                 )
@@ -689,7 +793,7 @@ var Home = function (_Component) {
           history = _props.history;
 
       if (match.params.city == undefined) {
-        history.push("/nyc");
+        history.push("/berlin");
       }
       var self = this;
       _axios2.default.get("/api/" + match.params.city).then(function (response) {

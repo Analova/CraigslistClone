@@ -21,7 +21,7 @@ module.exports = [
   {
     title: "saturn vue 2001",
     listing: "cars-and-trucks",
-    city: "münich",
+    city: "berlin",
     category: "for-sale",
     price: 51000,
     extraDetails: {

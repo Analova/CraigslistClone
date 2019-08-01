@@ -9,11 +9,10 @@ export default class Home extends Component {
     };
   }
 
-
   componentDidMount() {
     const { match, history } = this.props;
     if (match.params.city == undefined) {
-      history.push("/nyc");
+      history.push("/berlin");
     }
     const self = this;
     axios
