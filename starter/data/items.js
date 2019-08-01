@@ -4,7 +4,7 @@ module.exports = [
     listing: "cars-and-trucks",
     city: "berlin",
     category: "for-sale",
-    price: 46000,
+    price: 36000,
     extraDetails: {
       mileage: 543278,
       condition: "Like new",
@@ -40,7 +40,7 @@ module.exports = [
     listing: "cars-and-trucks",
     city: "düsseldorf",
     category: "for-sale",
-    price: 35000,
+    price: 20000,
     extraDetails: {
       mileage: 543278,
       condition: "Like new",

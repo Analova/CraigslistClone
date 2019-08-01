@@ -16,7 +16,7 @@ var _react = __webpack_require__(18);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(587);
+var _reactRouterDom = __webpack_require__(589);
 
 var _Header = __webpack_require__(266);
 
@@ -297,6 +297,10 @@ var _axios = __webpack_require__(108);
 
 var _axios2 = _interopRequireDefault(_axios);
 
+var _queryString = __webpack_require__(506);
+
+var _queryString2 = _interopRequireDefault(_queryString);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -469,12 +473,35 @@ var Category = function (_Component) {
       });
     };
 
+    _this.submitFillters = function () {
+      var self = _this;
+      var _this$props2 = _this.props,
+          match = _this$props2.match,
+          location = _this$props2.location,
+          history = _this$props2.history;
+      var _this$state = _this.state,
+          min_price = _this$state.min_price,
+          max_price = _this$state.max_price,
+          sort = _this$state.sort,
+          select_view = _this$state.select_view;
+      // history.push(
+      //   `/${match.params.city}/${
+      //     match.params.category
+      //   }?min_price=${min_price}&max_price=${max_price}&sort=${sort}&select_view=${select_view}`
+      // );
+
+      document.location.href = "/" + match.params.city + "/" + match.params.category + "?min_price=" + min_price + "&max_price=" + max_price + "&sort=" + sort + "&select_view=" + select_view;
+
+      var queryParams = _queryString2.default.parse(_this.props.location.search);
+      // const { min_price, max_price, sort, select_view } = queryParams;
+    };
+
     _this.state = {
       itemsData: [],
-      min_price: 100,
-      max_price: 0,
-      make: "bmw",
-      mode: "A 2011",
+      min_price: 10000,
+      max_price: 50000,
+      make: "bwm",
+      mode: "A 2011 ",
       select_view: "gallery",
       sort: "newest"
     };
@@ -499,6 +526,34 @@ var Category = function (_Component) {
       }).catch(function (error) {
         console.log(error);
       });
+      //console.log("Quarry", qs.parse(this.props.location.search));
+      var queryParams = _queryString2.default.parse(this.props.location.search);
+      var min_price = queryParams.min_price,
+          max_price = queryParams.max_price,
+          sort = queryParams.sort,
+          select_view = queryParams.select_view;
+
+      if (queryParams.min_price != undefined) {
+        _axios2.default.get("/api/" + match.params.city + "/" + match.params.category + "?min_price=" + min_price + "&max_price=" + max_price + "&sort=" + sort + "&select_view=" + select_view).then(function (response) {
+          self.setState({
+            itemsData: response.data
+          }, function () {
+            console.log(self.state);
+          });
+        }).catch(function (error) {
+          console.log(error);
+        });
+      } else {
+        _axios2.default.get("/api/" + match.params.city + "/" + match.params.category).then(function (response) {
+          self.setState({
+            itemsData: response.data
+          }, function () {
+            console.log(self.state);
+          });
+        }).catch(function (error) {
+          console.log(error);
+        });
+      }
     }
   }, {
     key: "render",
@@ -538,13 +593,8 @@ var Category = function (_Component) {
                   },
                   _react2.default.createElement(
                     "option",
-                    { value: "0" },
-                    "0"
-                  ),
-                  _react2.default.createElement(
-                    "option",
-                    { value: "20000" },
-                    "20000"
+                    { value: "10000" },
+                    "10000"
                   ),
                   _react2.default.createElement(
                     "option",
@@ -555,16 +605,17 @@ var Category = function (_Component) {
                     "option",
                     { value: "40000" },
                     "40000"
-                  )
-                ),
-                _react2.default.createElement(
-                  "select",
-                  {
-                    className: "max-price",
-                    name: "max_price",
-                    onChange: this.handleChange,
-                    value: this.state.max_price
-                  },
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "50000" },
+                    "50000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "60000" },
+                    "60000"
+                  ),
                   _react2.default.createElement(
                     "option",
                     { value: "50000" },
@@ -585,6 +636,65 @@ var Category = function (_Component) {
                     { value: "80000" },
                     "80000"
                   )
+                ),
+                _react2.default.createElement(
+                  "select",
+                  {
+                    className: "max-price",
+                    name: "max_price",
+                    onChange: this.handleChange,
+                    value: this.state.max_price
+                  },
+                  _react2.default.createElement(
+                    "option",
+                    { value: "20000" },
+                    "10000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "30000" },
+                    "30000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "40000" },
+                    "40000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "50000" },
+                    "50000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "60000" },
+                    "60000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "50000" },
+                    "50000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "60000" },
+                    "60000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "70000" },
+                    "70000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "80000" },
+                    "80000"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    { value: "90000" },
+                    "80000"
+                  )
                 )
               )
             ),
@@ -594,7 +704,7 @@ var Category = function (_Component) {
               { className: "form-group button" },
               _react2.default.createElement(
                 "div",
-                { className: "primary-btn" },
+                { className: "primary-btn", onClick: this.submitFillters },
                 "Update"
               ),
               _react2.default.createElement(
